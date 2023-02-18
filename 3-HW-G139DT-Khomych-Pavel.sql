@@ -11,7 +11,7 @@ select distinct St.CITY as St_c,
            from STUDENTS as St, 
 		        LECTURERS as Lc, 
 				UNIVERSITIES as Un
-        where St.UNIV_ID=Lc.UNIV_ID and Lc.UNIV_ID=Un.ID;
+          where St.UNIV_ID=Lc.UNIV_ID and Lc.UNIV_ID=Un.ID;
 
 -- 2. Напишите запрос для вывода полей в следущем порядке: семестр, в котором он
 --    читается, идентификатора (номера ID) предмета обучения, его наименования и 
@@ -46,7 +46,7 @@ select NAME, SEMESTER, HOURS
 
 select distinct MARK, EXAM_DATE
            from EXAM_MARKS
-		  where EXAM_DATE = '2012-06-12';
+	  where EXAM_DATE = '2012-06-12';
 
 -- 7. Выведите список фамилий студентов, обучающихся на третьем и последующих 
 --    курсах и при этом проживающих не в Киеве, не Харькове и не Львове.
@@ -103,7 +103,6 @@ select SURNAME, NAME, BIRTHDAY, COURSE, COURSE%2 result
 
 -- 12. Упростите выражение фильтрации (избавтесь от NOT) и дайте логическую формулировку запроса?
 -- SELECT * FROM STUDENTS WHERE (STIPEND < 500 OR NOT (BIRTHDAY >= '1993-01-01' AND ID > 9))
--- Подсказка: после упрощения, запрос должен возвращать ту же выборку, что и оригинальный
 
 select * 
   from STUDENTS 
