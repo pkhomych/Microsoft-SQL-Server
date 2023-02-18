@@ -7,10 +7,10 @@
 
 select distinct St.CITY as St_c, 
                 Lc.CITY as Lc_c, 
-				Un.CITY as Un_c
+		Un.CITY as Un_c
            from STUDENTS as St, 
-		        LECTURERS as Lc, 
-				UNIVERSITIES as Un
+		LECTURERS as Lc, 
+		UNIVERSITIES as Un
           where St.UNIV_ID=Lc.UNIV_ID and Lc.UNIV_ID=Un.ID;
 
 -- 2. Напишите запрос для вывода полей в следущем порядке: семестр, в котором он
