@@ -1,5 +1,3 @@
---  !!! В выходной выборке должны присутствовать только запрашиваемые в условии поля.
-use QALight
 
 -- 1. Напишите один запрос с использованием псевдонимов для таблиц и псевдонимов полей, 
 --    выбирающий все возможные комбинации городов (CITY) из таблиц 
@@ -12,8 +10,8 @@ select distinct St.CITY as St_c,
 				Un.CITY as Un_c
            from STUDENTS as St, 
 		        LECTURERS as Lc, 
-				UNIVERSITIES as Un;
-        --where St.UNIV_ID=Lc.UNIV_ID and Lc.UNIV_ID=Un.ID;
+				UNIVERSITIES as Un
+        where St.UNIV_ID=Lc.UNIV_ID and Lc.UNIV_ID=Un.ID;
 
 -- 2. Напишите запрос для вывода полей в следущем порядке: семестр, в котором он
 --    читается, идентификатора (номера ID) предмета обучения, его наименования и 
@@ -21,7 +19,6 @@ select distinct St.CITY as St_c,
 
 select SEMESTER, ID, NAME, HOURS 
   from SUBJECTS;
-
 
 -- 3. Выведите все строки таблицы EXAM_MARKS, в которых предмет обучения SUBJ_ID равен 4
 
@@ -59,8 +56,8 @@ select SURNAME, COURSE, CITY
  where COURSE >= 3 and CITY not in ('Киев','Харьков','Львов');
  
  select SURNAME, COURSE, CITY
-  from STUDENTS 
- where COURSE >= 3 and (CITY <> 'Киев' and CITY <> 'Харьков' and CITY <> 'Львов');
+   from STUDENTS 
+  where COURSE >= 3 and (CITY <> 'Киев' and CITY <> 'Харьков' and CITY <> 'Львов');
 
 -- 8. Покажите данные о фамилии, имени и номере курса для студентов, 
 --    получающих стипендию в диапазоне от 450 до 650, не включая 
